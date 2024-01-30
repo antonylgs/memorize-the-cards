@@ -1,0 +1,180 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#title {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: right;
+}
+
+#title-card {
+  position: absolute;
+  top: 40px;
+  right: 100px;
+  width: 30px;
+  height: 40px;
+  margin: 5px;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  animation: rotateYRight 4s infinite linear;
+}
+
+#title-card .front {
+  background-image: url("https://i.ibb.co/tHT3Jvt/Fay4-9-G91-Hw2n-Nl-Ux-Lf-Sz-Hp-VRYSTDU4e-CX0q-Iemvuts.png");
+}
+
+@keyframes rotateYRight {
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button img {
+  border-radius: 4px;
+  width: 50px;
+}
+
+#reset {
+  display: none;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  color: black;
+  padding: 10px 15px;
+  background: white;
+  border-radius: 10px;
+  border: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+}
+button:hover {
+  cursor: pointer;
+}
+button:active {
+  transform: scale(0.9);
+  transition: transform 0.2s;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 250px;
+  margin: auto;
+}
+
+#cat,
+#nft,
+#anime,
+#food {
+  position: relative;
+  color: black;
+  padding: 10px 15px;
+  background: white;
+  border-radius: 10px;
+  height: 100px;
+  border: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+}
+
+#counter {
+  position: absolute;
+  top: -50px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 640px;
+  height: 640px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  perspective: 1000px;
+  margin-top: 150px;
+}
+
+.card {
+  min-width: 130px;
+  width: 20%;
+  height: 25%;
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card:active {
+  transform: scale(0.9);
+  transition: transform 0.2s;
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  backface-visibility: hidden;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.front {
+  transform: rotateY(180deg);
+  background-image: "";
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 700px) {
+  #title-card {
+    right: 10px;
+    top: 55px;
+  }
+}
